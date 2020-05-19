@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <center>
+
+        <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Wykres parametrów bramkowania od napięcia">
+                    <content>
+                        <LineChart fx:id="chartBramkowanieNapiecie" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                            <xAxis>
+                                <NumberAxis label="U [mV]" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis fx:id="bramkowanieYAxis" side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                    </content>
+                </Tab>
+                <Tab text="Wykres napięcia od czasu">
+                    <content>
+                        <LineChart fx:id="chartNapiecieCzas">
+                            <xAxis>
+                                <NumberAxis label="t [ms]" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis label="U [mV]" side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                    </content>
+                </Tab>
+                <Tab text="Wykres zależności prądów jonowych od czasu">
+                    <content>
+                        <LineChart fx:id="chartPradyCzas">
+                            <xAxis>
+                                <NumberAxis label="t [ms]" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis fx:id="mojaos" label="I [µA/cm²]" side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                    </content>
+                </Tab>
+                <Tab text="Wykres zależności parametrów bramkowania od czasu ">
+                    <content>
+                        <LineChart fx:id="chartBramkowanieCzas">
+                            <xAxis>
+                                <NumberAxis label="t [ms]" side="BOTTOM" />
+                            </xAxis>
+                            <yAxis>
+                                <NumberAxis side="LEFT" />
+                            </yAxis>
+                        </LineChart>
+                    </content>
+                </Tab>
+            </tabs>
+         <padding>
+            <Insets left="8.0" />
+         </padding>
+        </TabPane>
+    </center>
+   <left>
+      <GridPane alignment="CENTER" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" text="C [µF/cm²]" />
+            <Label text="ENa [mV]" GridPane.rowIndex="1" />
+            <Label text="EK [mV]" GridPane.rowIndex="2" />
+            <Label text="EL [mV]" GridPane.rowIndex="3" />
+            <Label text="gNa [mS/cm²]" GridPane.rowIndex="4" />
+            <Label text="gK [mS/cm²]" GridPane.rowIndex="5" />
+            <Label text="gL [mS/cm²]" GridPane.rowIndex="6" />
+            <Label text="I [µA/cm²]" GridPane.rowIndex="7" />
+            <TextField fx:id="textFieldC" maxWidth="-Infinity" prefWidth="60.0" text="1.0" GridPane.columnIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </TextField>
+            <TextField fx:id="textFieldENa" maxWidth="-Infinity" prefWidth="60.0" text="115.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="textFieldEK" maxWidth="-Infinity" prefWidth="60.0" text="-12.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="textFieldEL" maxWidth="-Infinity" prefWidth="60.0" text="10.6" GridPane.columnIndex="1" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="textFieldGNa" maxWidth="-Infinity" prefWidth="60.0" text="120.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="textFieldGK" maxWidth="-Infinity" prefWidth="60.0" text="36.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="textFieldGL" maxWidth="-Infinity" prefWidth="60.0" text="0.3" GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="textFieldI" maxWidth="-Infinity" prefWidth="60.0" text="30.0" GridPane.columnIndex="1" GridPane.rowIndex="7">
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </TextField>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#buttonDrawClicked" text="Rysuj" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="F [Hz] =" GridPane.rowIndex="9" />
+            <Label text="Umax [mV] =" GridPane.rowIndex="10" />
+            <Label text="Umean [mV] =" GridPane.rowIndex="11" />
+            <Label text="Sd [mV] =" GridPane.rowIndex="12" />
+            <Label fx:id="labelF" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label fx:id="labelUmax" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+            <Label fx:id="laberLmean" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+            <Label fx:id="labelSd" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+         </children>
+      </GridPane>
+   </left>
+   <padding>
+      <Insets left="10.0" />
+   </padding>
+</BorderPane>
